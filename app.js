@@ -54,17 +54,16 @@ var cargarPagina = function(){
 }
 
 cargarPagina(); 
-//´Botón de ir arriba del documento
-function toTop() {
-    window.scrollTo(0, 0)
-}
 
-toTop();
+
+
+
+
 //alert('hola'); comprobando vinculo y funcionalidad
 
-
+/*
 function myFunction() {
-//para buscar nombres en search
+para buscar nombres en search
     var input = document.getElementById("myInput");
     var filter = input.value.toUpperCase();
     var ul = document.getElementsByClassName("myUl");
@@ -79,7 +78,29 @@ function myFunction() {
         }
     }
 }
-myFunction();
+*/
+function myFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+
+        }
+    }
+}
+
 //alert('estoy');comprobando vinculo y funcionalidad
 
 }
+//´Botón TOP para ir arriba al inicio de sección
+function toTop() {
+    window.scrollTo(0, 0)
+}
+toTop();
